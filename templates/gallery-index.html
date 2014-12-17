@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Medlab</title>
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <style type="text/css">
+      #gallery {
+        position: absolute;
+        width: 100%;
+        bottom: 100px;
+        top: 0;
+        background-color: #aaa;
+      }
+      #dock {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        height: 100px;
+        background-color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="gallery">
+    {% for p in album.get_photos() %}
+      <img src="" alt=""/>
+    {% end %}
+    </div>
+    <div id="dock">
+    {% for a in albums %}
+      <a href="/albums/{{ a.id }}/">{{ a.name }}</a>
+    {% end %}
+      <button type="button" class="btn btn-default" id="new-album">New Album</button>
+    </div>
+    <script src="/static/js/jquery-2.1.1.min.js"></script>
+    <script src="/static/bs3/js/bootstrap.min.js"></script>
+    <script src="/static/js/underscore.js"></script>
+    <script src="/static/js/backbone.js"></script>
+    <script src="/static/js/dropzone.js"></script>
+    <script src="/static/js/app.js"></script>
+  </body>
+</html>
